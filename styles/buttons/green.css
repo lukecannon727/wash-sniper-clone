@@ -1,0 +1,18 @@
+button.green {
+    color: #04060c;
+    background-color: #50d2c1;
+}
+
+button.green:hover:enabled:not(:active) {
+    background-color: #97fce4;
+}
+
+button.green:active {
+    background-color: #17453f;
+}
+
+button.green:disabled {
+    cursor: default;
+    background-color: #17453f;
+}
+

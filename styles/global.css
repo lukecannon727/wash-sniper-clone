@@ -1,0 +1,14 @@
+* {
+    font-family: monospace;
+    font-size: 14px;
+}
+
+body {
+    background-color: #0f1a1f;
+    color: #ffffff;
+    margin: 0px;
+}
+
+#importKey:invalid {
+    border: 2px solid #FF0000;
+}

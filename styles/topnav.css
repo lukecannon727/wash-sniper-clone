@@ -1,0 +1,28 @@
+.topnav {
+    background-color: #45c0df;
+    color: #04060c;
+    margin: 0px 0px;
+    padding: 12px 16px;
+    border-width: 0px;
+    box-sizing: border-box;
+}
+
+.topnav > a {
+    color: #04060c;
+    margin: 0px 0px;
+    padding: 4px 16px;
+    border-width: 0px;
+    border-radius: 5px;
+}
+
+.topnav > a:hover {
+    background-color: #a9e4f1;
+}
+
+.topnav a.active {
+    background-color: #ffffff;
+}
+
+.main {
+    padding: 0px 24px;
+}

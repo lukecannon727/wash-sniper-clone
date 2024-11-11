@@ -1,0 +1,17 @@
+button.red {
+    color: #ffffff;
+    background-color: #d35a71;
+}
+
+button.red:hover:enabled:not(:active) {
+    background-color: #dd7789;
+}
+
+button.red:active {
+    background-color: #6a112f;
+}
+
+button.red:disabled {
+    cursor: default;
+    background-color: #6a112f;
+}

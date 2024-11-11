@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="favicon1.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="theme-color" content="#03251F"/>
+    <meta name="description" content="Wash Sniper"/>
+
+    <link rel="stylesheet" href="master.css">
+    <title>Wash Sniper</title>
+    <script crossorigin src="https://unpkg.com/@msgpack/msgpack"></script>
+    <!--https://github.com/msgpack/msgpack-javascript-->
+    <script type="module" src="index.js"></script>
+</head>
+
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div class="topnav">
+        <a class="active" href="index.html">Sniper</a>
+        <a href="tutorial.html">Tutorial</a>
+        <a href="about.html">About</a>
+    </div>
+    <div class="main">
+        <h1>Wash Sniper | v0.1.0 Beta release</h1>
+        <h2>Upcoming Launches</h2>
+        <p>
+            Only known launches are listed here. You will be able to manually input unlisted launches after the next update (tentatively 14th Nov).<br>
+            All listed launch info comes from external sources, please verify it yourself and DYOR. Errors deploying and/or malicious deployment may occur.<br>
+        </p>
+        <details class="launch">
+            <summary>$STRICT</summary>
+            <p class="details">
+                Launch: 2024-11-11 18:00:00 UTC<br>
+                <br>
+                Supply: &nbsp&nbsp1_000_000_000 (100%)<br>
+                - HIP2: &nbsp&nbsp&nbsp&nbsp850_000_000 (85%)<br>
+                - Team: &nbsp&nbsp&nbsp&nbsp&nbsp50_000_000 (5%)<br>
+                - Token: &nbsp&nbsp 100_000_000 (10%)<br>
+                &nbsp&nbsp- $YEETI: &nbsp50_000_000 (5%)<br>
+                &nbsp&nbsp- $HFUN: &nbsp&nbsp50_000_000 (5%)<br>
+                <br>
+                HIP2 Start: $0.0001 ($100_000 MC)<br>
+                <br>
+                <small>(source: deployer TG @brendvn)</small>
+            </p>
+        </details>
+        <details class="step" open>
+            <summary>Step 1: Connect</summary>
+            <div class="details">
+                <div>
+                    <button id="washLogin" class="login blue big"><b>$WASH</b> login</button>
+                    <input id="washAddress" class="big" type="text" size="42" minlength="42" maxlength="42" disabled value="Disconnected">
+                    <button id="washCopy" class="blue big" disabled>Copy</button>
+                </div>
+                <div style="height: 4px;"></div>
+                <div>
+                    <label for="washBalance">$WASH spot balance:</label>
+                    <input id="washBalance" type="text" size="10" disabled value="N/A">
+                    <button id="washBalanceRefresh" class="blue" disabled>Refresh</button>
+                </div>
+                <div style="height: 16px;"></div>
+                <div>
+                    <button id="sniperConnect" class="login blue big" disabled><b>Sniper</b> connect</button>
+                    <input id="sniperAddress" class="big" type="text" size="42" minlength="42" maxlength="42" disabled value="Disconnected">
+                    <button id="sniperCopy" class="blue big" disabled>Copy</button>
+                </div>
+                <div style="height: 4px;"></div>
+                <div>
+                    <label for="sniperBalance">$USDC spot balance:</label>
+                    <input id="sniperBalance" type="text" size="10" disabled value="N/A">
+                    <button id="sniperBalanceRefresh" class="blue" disabled>Refresh</button>
+                </div>
+                <div style="height: 16px;"></div>
+                <div>
+                    <button id="sniperEnable" class="green big" disabled><b>Enable</b> sniper</button>
+                    <button id="sniperDisable" class="red big" disabled><b>Disable</b> sniper</button>
+                    <div style="height: 4px;"></div>
+                    <div id="errorDuplicateSniper" class="msg error">You can only Enable one sniper address per $WASH wallet. Connect and Disable your previous sniper first</div>
+                </div>
+            </div>
+        </details>
+        <details class="step" open>
+            <summary>Step 2: Configure Sniper</summary>
+            <div class="details">
+                <label for="token">Token</label>
+                <select id="token">
+                    <option value="STRICT">$STRICT (index 133)</option>
+                </select>
+                <div style="height: 16px"></div>
+                <div>WARNING : Orders that are 20x away from the current price will be rejected by the exchange, so don't set your market cap too low or too high</div>
+                <div style="height: 16px"></div>
+                <label for="orderMarketCap">Market Cap&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+                <input id="orderMarketCap" type="number" required><br>
+                <!-- <label for="orderPrice">Order Price (USD)</label>
+                <input id="orderPrice" type="text" disabled value="N/A"><br> -->
+                <label for="orderNumber">Number of Orders&nbsp;</label>
+                <input id="orderNumber" type="number" required value="100">
+                <div style="height: 16px"></div>
+                <button id="queueBuys" class="green big" disabled><b>Add Buys</b></button>
+                <button id="queueSells" class="red big" disabled><b>Add Sells</b></button>
+                <button id="queueClear" class="big" disabled><b>Clear Queue</b></button>
+                <!-- <button onclick="testFunction()">Test</button> -->
+                <div style="height: 16px"></div>
+                <label for="queueSummary">Orders:</label><br>
+                <input id="queueSummary" type="text" size="30" disabled value="You have 0 orders queued"><br>
+                <textarea id="queueList" rows="3" cols="60" readonly></textarea>
+            </div>
+        </details>
+        <details class="step" open>
+            <summary>Step 3: Execute</summary>
+            <div class="details">
+                <p>
+                    Choose 1. Refresh or Close this page to stop execution / change setup<br>
+                    <br>
+                    <b>Provisional Sniper Restrictions</b><br>
+                    Orders per second = min(WASH_BALANCE / 180, 25)<br>
+                    <br>
+                    So the sniper maxes out at 4500 $WASH currently. This was a very hastily coded restriction, and will change in the next version to be smoother.<br>
+                    Currently, the users with more than 4500 $WASH can still benefit by splitting into multiple WASH wallets to snipe on multiple tabs.
+                </p>
+                <div class="grid">
+                    <div class="top left">
+                        <button id="executeNow" class="green">
+                            <b>EXECUTE</b> orders <b>NOW</b><br>
+                            <br>
+                            <img src="res/button_160.png"><br>
+                        </button>
+                    </div>
+                    <div id="msgExecuting" class="bottom left msg">Executing</div>
+                    <div class="top right">
+                        <button id="executeTimed" class="green">
+                            <b>EXECUTE</b> timed orders<br>
+                            <br>
+                            <img src="res/sixpm_160.png"><br>
+                        </button>
+                    </div>
+                    <div class="bottom right">
+                        <label for="timeStart">Start Time UTC</label>
+                        <input id="timeStart" type="time" step="1" value="17:59:45" required><br>
+                        <label for="timeEnd" hidden>End&nbsp&nbsp Time UTC</label>
+                        <input id="timeEnd" hidden type="time" step="1" value="18:00:45" required><br>
+                        <br>
+                        <label for="countdown">Countdown:</label><br>
+                        <input id="countdown" type="text" size="60" disabled value="This will execute N/A orders after N/A seconds"><br>
+                    </div>
+                </div>
+            </div>
+        </details>
+    </div>
+</body></html>

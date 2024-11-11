@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="favicon2.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="theme-color" content="#03251F"/>
+    <meta name="description" content="Wash Sniper - Tutorial"/>
+
+    <link rel="stylesheet" href="master.css">
+    <title>Wash Sniper - Tutorial</title>
+</head>
+
+<body>
+    <div class="topnav">
+        <a href="index.html">Sniper</a>
+        <a class="active" href="tutorial.html">Tutorial</a>
+        <a href="about.html">About</a>
+    </div>
+    <div class="main">
+        <h1>Wash Sniper | v0.1.0 Beta release</h1>
+        <h2>Tutorial</h2>
+        <p>
+            (TODO: polish this with screenshots / gifs & make video)<br>
+            <br>
+            You may use separate wallets for holding $WASH and sniping.
+            <ol>
+                <li>Select wallet (EVM address) holding $WASH in your wallet extension (Rabby, Metamask, etc). Sign tx to prove ownership & login.</li>
+                <li>Select sniper wallet in your wallet extension. Fund with Hyperliquid L1 <b>spot</b> USDC to snipe. Enable the sniper (similar process to Establishing Connection on HL - this creates an API wallet)</li>
+                <li>Queue your sniping orders. Your sniping Marketcap is determined by your price, it will show. Note you are choosing the worst price you can accept, it could fill for better.</li>
+                <li>Trigger the sniper. This can be done manually or by setting the timer. <b>The sniping page needs to stay open, and ideally focused. This is a local sniper</b></li>
+                <li>To check how the sniper did, check your trade history on the sniping wallet on the Hyperliquid Frontend. (TODO: will add this on page directly later)
+                    <ul>
+                        <li>Order History: This is your sniping attempts. If you see none there, the sniper failed to work (report this)</li>
+                        <li>Trade History: This is your fills</li>
+                    </ul>
+                </li>
+            </ol>
+        </p>
+    </div>
+</body></html>

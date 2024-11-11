@@ -1,0 +1,17 @@
+button.blue {
+    color: #04060c;
+    background-color: #45c0df;
+}
+
+button.blue:hover:enabled:not(:active) {
+    background-color: #a9e4f1;
+}
+
+button.blue:active {
+    background-color: #09667e;
+}
+
+button.blue:disabled {
+    cursor: default;
+    background-color: #09667e;
+}

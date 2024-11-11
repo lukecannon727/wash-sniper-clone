@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="favicon2.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="theme-color" content="#03251F"/>
+    <meta name="description" content="Wash Sniper - About"/>
+
+    <link rel="stylesheet" href="master.css">
+    <title>Wash Sniper - About</title>
+</head>
+
+<body>
+    <div class="topnav">
+        <a href="index.html">Sniper</a>
+        <a href="tutorial.html">Tutorial</a>
+        <a class="active" href="about.html">About</a>
+    </div>
+    <div class="main">
+        <h1>Wash Sniper | v0.1.0 Beta release</h1>
+        <h2>About</h2>
+        <p>
+            <h3>Me</h3>
+            Just another bozo in the Hyperliquid trenches. <a href="https://shuri2060.github.io/">My page</a>
+            <h3>FAQ</h3>
+            <ul>
+                <li>Do I need to keep the browser alive for the sniper to work? Yes. You should also check your device / browser settings to ensure the tab doesn't fall asleep if you leave it open. In my experience, as long as it's focused, it'll work</li>
+                <li>Do I need $WASH to use the sniper? No, there is a free tier, but it'll be vastly outperformed by other snipers (or maybe even your bare hands), so you'll either be very unlikely to buy or have a high entry. Even so, this could still be alright for sniping $HYPE</li>
+                <li>Will the $WASH requirements change in future? Could. Won't do it without talking with users first</li>
+                <!-- <li>Security risks of the sniper? TODO - will try listing all possible attack vectors</li> -->
+                <li>Why can't I just open multiple sniper windows (on multiple devices)? You can. If you're logged in with the same wallet holding $WASH, this is unlikely to improve anything due to reused nonces. Worse, it might block some tx from succeeding due to L1 nonce ordering requirements. However, if you login with different wallets holding $WASH, this problem won't occur. On this topic - will add in feature to easier accomodate multiple logins on the same browser in future</li>
+                <li>I'll add more when I think of / get asked them</li>
+            </ul>
+            <h3>Todo / Roadmap</h3>
+            <ul>
+                <li>optimizing the page for $HYPE launch. Need tokenomics / more details to do</li>
+                <li>afk on 12-13th, if anything launches then, the page won't be updated in time for it to be sniped</li>
+                <li>currently no additional fees to Hyperliquid's in v0.1.0, but this will change in future versions. This will be stated clearly when added</li>
+                <li>manually snipe an unlisted launch (you input launch params / time)</li>
+                <li>automatically snipe new tokens, as long as page is open, like HFUN
+                    <ul>
+                        <li>filter config for antiscam, specific tickers, etc</li>
+                        <li>likely to be a fair bit slower than HFUN, as latency matters for detection</li>
+                    </ul>
+                </li>
+                <li>QR code login/connecting, so page is usable on mobile browser (without a wallet app)</li>
+                <li>a proper domain when we're initial testing</li>
+                <li>tentative: maybe sniping vault ran on a Tokyo VPS, similar to HFUN. Could then run TG bot interface for sniper</li>
+                <li>tentative: create simple instrucion set / package for users to setup their own sniping (vault) on a VPS
+                    <ul>
+                        <li>may even integrate into node setup, but depends very much on how the L1 changes in future as it decentralizes</li>
+                    </ul>
+                </li>
+                <li>a reminder I consider this sniper a sideproject for several reasons 
+                    <ul>
+                        <li>as HL grows, and more builders onboard, the sniping space will become more competitive, and alpha will dilute. Early builders have first mover advantage, but that will diminish over time. This is speculation, and it may turn out inflows outstrip this dilution, but I will stick with conservative expectations</li>
+                        <li>I have other ideas I wish to implement on Hyperliquid, before the building space starts to mature, including
+                            <ul>
+                                <li>more local tooling for (semi-)automated strategies
+                                    <ul>
+                                        <li>although this fits into the theme of this local sniper, these features will likely be released freely unlike the sniper as there is no reason to gatekeep. As discussed with users before, sniper is gatekept to avoid diluting the sniping space, same as HFUN</li>
+                                        <li>could still consider gatekept initial testing phase, though</li>
+                                    </ul>
+                                </li>
+                                <li>alternative FE for Hyperliquid, which this sniper / local tools will be part of</li>
+                                <li>some silly games</li>
+                                <li>options protocol</li>
+                                <li>???</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            - Shuri2060
+        </p>
+    </div>
+</body></html>

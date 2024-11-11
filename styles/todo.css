@@ -1,0 +1,8 @@
+.msg {
+    visibility: hidden;
+    color: #97fce4;
+}
+
+.error {
+    color: #dd7789;
+}

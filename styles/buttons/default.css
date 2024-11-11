@@ -1,0 +1,27 @@
+button {
+    background-color: #ffffff;
+    color: #04060c;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 0px 8px;
+    margin: 1px 1px;
+    border-radius: 5px;
+    transition: background 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, text-decoration-color 0.2s ease-in-out;
+}
+
+button:hover:enabled:not(:active) {
+    background-color: #cccccc;
+}
+
+button:active {
+    cursor: default;
+    background-color: #888888;
+}
+
+button:disabled {
+    cursor: default;
+    background-color: #888888;
+}

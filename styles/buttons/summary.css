@@ -1,0 +1,56 @@
+details.launch {
+    margin: 0px 0px 16px 0px;
+}
+
+details.step {
+    margin: 0px 0px 16px 0px;
+}
+
+details > summary {
+    cursor: pointer;
+    outline: none;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    padding: 0px 8px;
+    margin: 2px 0px;
+    border-radius: 5px;
+    transition: background 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, text-decoration-color 0.2s ease-in-out;
+    font-weight: bold;
+    width: fit-content;
+}
+
+details.launch > summary {
+    background-color: #cccccc;
+    color: #04060c;
+    font-size: 16px;
+}
+
+details.launch > summary:hover {
+    background-color: #ffffff;
+}
+
+details.launch > .details {
+    background-color: #cccccc;
+    color: #04060c;
+    outline: none;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    padding: 2px 8px;
+    margin: 0px 0px 16px 0px;
+    border-radius: 5px;
+    font-size: 14px;
+    width: fit-content;
+}
+
+details.step > summary {
+    margin: 8px 0px 8px 0px;
+    font-size: 24px;
+}
+
+details.step > summary:hover {
+    background-color: #09667e;
+}
+
+details.step > .details {
+    margin: 8px 0px 16px 0px;
+}

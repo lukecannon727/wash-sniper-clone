@@ -1,0 +1,22 @@
+.grid {
+    display: grid;
+    grid-template-columns: 220px;
+    grid-template-rows: 220px;
+}
+
+.grid > .top {
+    grid-row: 1;
+}
+
+.grid > .bottom {
+    grid-row: 2;
+}
+
+.grid > .left {
+    grid-column: 1;
+}
+
+.grid > .right {
+    grid-column: 2;
+}
+

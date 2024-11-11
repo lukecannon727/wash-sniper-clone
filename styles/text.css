@@ -1,0 +1,54 @@
+h1 {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+p {
+    font-size: 14px;
+}
+
+small {
+    font-size: 10px;
+}
+
+a {
+    color: #ffffff;
+    font-size: 16px;
+}
+
+input {
+    background-color: #ffffff;
+    color: #04060c;
+    outline: none;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    padding: 0px 6px;
+    margin: 1px 1px;
+    border-radius: 3px;
+}
+
+input:disabled {
+    background-color: #cceeff;
+}
+
+textarea:read-only {
+    background-color: #cceeff;
+}
+
+textarea {
+    background-color: #ffffff;
+    color: #04060c;
+    outline: none;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    padding: 0px 6px;
+    margin: 1px 1px;
+    border-radius: 3px;
+}
